@@ -36,4 +36,23 @@ class AuthController extends Controller
 
         return back()->with('success', "Inscription réussie ! Un email de bienvenue a été envoyé dans votre mailbox");
     }
+
+    public function showFormLogin(){
+        if(Auth::check()){
+            return redirect()->route('dashboard');
+        }
+        return view('auth.login');
+    }
+
+    public function login(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        if(Auth::attempt($request->only("email","password"))){
+            return redirect()->intended('dashboard');
+        }
+        return back()->withErrors(["email" => "Les informations fournies ne correspondent pas !"]);
+    }
 }

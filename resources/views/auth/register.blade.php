@@ -43,7 +43,7 @@
 
         <button type="submit" class="w-full py-2 px-4 bg-sky-400 hover:bg-sky-900 text-white rounded-md">S'inscrire</button>
 
-        <p class="my-2 text-sm">Déjà un compte ? <a href="#" class="font-bold text-sky-700">Se connecter</a></p>
+        <p class="my-2 text-sm">Déjà un compte ? <a href="{{ route('login') }}" class="font-bold text-sky-700">Se connecter</a></p>
     </form>
     @endif
 </div>
