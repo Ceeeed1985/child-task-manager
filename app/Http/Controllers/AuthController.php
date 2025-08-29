@@ -55,4 +55,9 @@ class AuthController extends Controller
         }
         return back()->withErrors(["email" => "Les informations fournies ne correspondent pas !"]);
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
+    }
 }
