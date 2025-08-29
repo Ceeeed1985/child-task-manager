@@ -1,4 +1,4 @@
-@extends('public.base')
+@extends('layout.app')
 
 @section('title', "Dashboard")
 

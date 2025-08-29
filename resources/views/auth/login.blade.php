@@ -1,4 +1,4 @@
-@extends('public.base')
+@extends('layout.guest')
 
 @section('title', "Se connecter")
 
