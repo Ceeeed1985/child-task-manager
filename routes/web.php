@@ -17,4 +17,5 @@ Route::post('/login', [AuthController::class, "login"])->name('login.submit');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::post('/logout', [AuthController::class, "logout"])->name('logout');
 
-Route::get('/famille', [MemberController::class, 'index'])->name('famille')->middleware('auth');
+Route::get('/members', [MemberController::class, 'index'])->name('members.index')->middleware('auth');
+Route::get('/members/create', [MemberController::class, 'create'])->name('members.create')->middleware('auth');
