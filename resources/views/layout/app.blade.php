@@ -9,7 +9,7 @@
     <title>Child Task Manager - @yield('title')</title>
 </head>
 <body class="bg-neutral-900 flex">
-    <aside class="flex flex-col w-72 h-screen px-4 py-8 overflow-y-auto bg-neutral-900 border-r-2 border-neutral-800">
+    <aside class="flex flex-col w-1/6 h-screen px-4 py-8 overflow-y-auto bg-neutral-900 border-r-2 border-neutral-800">
         <a href="#" class="text-xl text-white flex gap-2 ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-7 text-sky-700">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
@@ -86,7 +86,7 @@
 
             <a href="#" class="flex items-center px-4 -mx-2">
                 <img class="object-cover mx-2 rounded-full h-18 w-18 border-4 border-sky-800 p-1" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="avatar" />
-                <span class="mx-2 font-medium text-neutral-300 text-lg">John Doe</span>
+                <span class="mx-2 font-medium text-neutral-300 text-lg">{{ Auth::user()->name }}</span>
             </a>
         </div>
         
@@ -105,7 +105,7 @@
 
     </aside>
     
-    <div>
+    <div class="w-5/6">
         @yield('content')
     </div>
     
