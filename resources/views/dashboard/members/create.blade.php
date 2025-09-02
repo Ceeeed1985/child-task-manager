@@ -7,7 +7,7 @@
 <div class="pt-6 px-12">
     <h1 class="text-sky-600 text-3xl font-bold mb-12">Ajouter un enfant</h1>
     <div class="flex gap-8 w-1/4">
-        <form action="" method="post" class="w-full" enctype="multipart/form-data">
+        <form action="{{ route('members.store') }}" method="post" class="w-full" enctype="multipart/form-data">
             @csrf
             <div class="flex flex-col gap-2 mb-4">
                 <label for="firstname" class="text-white text-lg w-full">Prénom :</label>
@@ -21,7 +21,7 @@
                 <label for="avatar" class="text-white text-lg w-full">Choisissez une photo :</label>
                 <input id="avatar" name="avatar" type="file" class="mt-1 p-3 block w-full bg-white border border-gray-300 rounded-md shadow-md">
             </div>
-            <button type="submit" class="bg-sky-600 text-white px-4 py-2 rounded">Enregistrer</button>
+            <button type="submit" class="bg-sky-600 hover:bg-sky-800 text-white px-4 py-2 rounded">Enregistrer</button>
         </form>
     </div>
     
