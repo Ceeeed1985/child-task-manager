@@ -9,18 +9,18 @@
     <div class="flex gap-8">
         <div class="card w-1/5 rounded-3xl py-12 border border-4 border-neutral-800 hover:border-sky-600 bg-neutral-800 ">
             <a href="#" class="flex flex-col items-center px-4 mx-2">
-                <img class="object-cover mx-2 rounded-full h-48 w-48 mb-12 " src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="avatar" />
+                <img class="object-cover mx-2 rounded-full h-48 w-48 mb-12 border border-8 border-sky-600 p-2" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="avatar" />
                 <span class="mx-2 font-medium text-neutral-300 text-lg">{{ Auth::user()->name }}</span>
             </a>
         </div>
 
         @foreach ($members as $member)
             <div class="card w-1/5 rounded-3xl py-12 border border-4 border-neutral-800 hover:border-sky-600 bg-neutral-800 ">
-            <a href="#" class="flex flex-col items-center px-4 mx-2">
-                <img class="object-cover mx-2 rounded-full h-48 w-48 mb-12 " src="{{ asset($member->avatar) }}" alt="avatar" />
-                <span class="mx-2 font-medium text-neutral-300 text-lg">{{ $member->firstname }}</span>
-            </a>
-        </div>
+                <a href="{{ route('members.show', $member->id) }}" class="flex flex-col items-center px-4 mx-2">
+                    <img class="object-cover mx-2 rounded-full h-48 w-48 mb-12 " src="{{ asset($member->avatar) }}" alt="avatar" />
+                    <span class="mx-2 font-medium text-neutral-300 text-lg">{{ $member->firstname }}</span>
+                </a>
+            </div>
         @endforeach
 
         <div class="card w-1/5 rounded-3xl py-12 border border-4 border-neutral-800 hover:border-sky-600 bg-neutral-800 opacity-[60%] hover:opacity-100">

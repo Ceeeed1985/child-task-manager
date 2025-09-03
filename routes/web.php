@@ -20,4 +20,4 @@ Route::post('/logout', [AuthController::class, "logout"])->name('logout');
 Route::get('/members', [MemberController::class, 'index'])->name('members.index')->middleware('auth');
 Route::get('/members/create', [MemberController::class, 'create'])->name('members.create')->middleware('auth');
 Route::post('/members/create', [MemberController::class, 'store'])->name('members.store')->middleware('auth');
-Route::get('/members/show{id}', [MemberController::class, 'show']);
+Route::get('/members/{id}', [MemberController::class, 'show'])->name('members.show')->middleware('auth');
