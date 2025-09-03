@@ -100,7 +100,7 @@
         
         <form class="mt-8 text-right" action="{{ route('logout') }}" method="post">
             @csrf
-            <button type="submit" class="py-2 px-4 bg-orange-700 text-white rounded-md flex items-center justify-self-end gap-2 group overflow-hidden relative">
+            <button type="submit" class="py-2 px-4 bg-orange-700 text-white rounded-md flex items-center justify-self-end gap-2 group overflow-hidden relative cursor-pointer">
                 <span class="max-w-0 overflow-hidden opacity-0 transform translate-x-5 group-hover:max-w-xs group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out whitespace-nowrap">
                         Déconnexion
                 </span>
