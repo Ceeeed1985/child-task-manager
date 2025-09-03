@@ -21,3 +21,6 @@ Route::get('/members', [MemberController::class, 'index'])->name('members.index'
 Route::get('/members/create', [MemberController::class, 'create'])->name('members.create')->middleware('auth');
 Route::post('/members/create', [MemberController::class, 'store'])->name('members.store')->middleware('auth');
 Route::get('/members/{id}', [MemberController::class, 'show'])->name('members.show')->middleware('auth');
+Route::get('/members/edit/{id}', [MemberController::class, 'edit'])->name('members.edit')->middleware('auth');
+Route::put('/members/update/{id}', [MemberController::class, 'update'])->name('members.update')->middleware('auth');
+Route::delete('/members/{id}', [MemberController::class, 'delete'])->name('members.delete')->middleware('auth');

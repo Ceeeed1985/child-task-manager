@@ -18,11 +18,11 @@
                     <span class="mx-2 font-medium text-neutral-300 text-lg">{{ $member->lastname }}</span>
                 </div>
                 <div class="flex gap-4">
-                    <a href="" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
-                    <form action="" method="post" class="text-white bg-red-700 font-semibold rounded hover:bg-red-900 px-4">
+                    <a href="{{ route('members.edit', $member->id) }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
+                    <form action="{{ route('members.delete', $member->id) }}" method="post" class="text-white bg-red-700 font-semibold rounded hover:bg-red-900 px-4">
                         @csrf
                         @method('delete')
-                        <a href="" class="">Supprimer</a>
+                        <button type="submit">Supprimer</button>
                     </form>
                 </div>
             </div>
