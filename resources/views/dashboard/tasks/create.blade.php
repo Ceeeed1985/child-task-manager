@@ -3,7 +3,6 @@
 @section('title', "Ajouter une tâche")
 
 @section('content')
-
 <div class="pt-6 px-12">
     <h1 class="text-sky-600 text-3xl font-bold mb-12">Ajouter une nouvelle tâche</h1>
     <div class="flex gap-8 w-1/4">
@@ -49,5 +48,4 @@
     </div>
     
 </div>
-
 @endsection

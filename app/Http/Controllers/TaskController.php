@@ -6,11 +6,12 @@ use App\Models\Task;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\TaskRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
     public function index(){
-        $tasks = Task::all();
+        $tasks = Task::where('user_id', Auth::id())->get();
         $categories = Category::all();
         return view('dashboard.tasks.index', compact('tasks', 'categories'));
     }

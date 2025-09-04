@@ -29,6 +29,9 @@
         </script>
     @endif
 
+    <div class="flex justify-end">
+        <a href="{{ route('tasks.create') }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 py-1 mb-6 rounded-lg hover:bg-sky-800">Créer une nouvelle tâche</a>
+    </div>
     
     <div class="flex gap-4">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 text-sky-600">
@@ -37,9 +40,6 @@
         <h1 class="text-white text-3xl font-bold mb-6">Gestion des tâches</h1>
     </div>
 
-    <div class="flex justify-end">
-        <a href="{{ route('tasks.create') }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 py-1 mb-6 rounded-lg hover:bg-sky-800">Créer une nouvelle tâche</a>
-    </div>
 
         <div class="flex gap-8 mb-12">
             <div class="w-full flex flex-col py-4 px-8 rounded-3xl border border-2 border-neutral-800">
