@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,3 +25,6 @@ Route::get('/members/{id}', [MemberController::class, 'show'])->name('members.sh
 Route::get('/members/edit/{id}', [MemberController::class, 'edit'])->name('members.edit')->middleware('auth');
 Route::put('/members/update/{id}', [MemberController::class, 'update'])->name('members.update')->middleware('auth');
 Route::delete('/members/{id}', [MemberController::class, 'delete'])->name('members.delete')->middleware('auth');
+
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index')->middleware('auth');
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create')->middleware('auth');
