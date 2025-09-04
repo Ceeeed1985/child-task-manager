@@ -51,8 +51,20 @@
                             @if ($category->id == $task->category_id)
                                 <div class="flex justify-between my-1">
                                     <span class="text-white text-lg w-1/2 pl-4">{{ $task->name }}</span>
-                                    <span class="text-white text-lg text-center w-1/8">{{ $task->points }}</span>
-                                    <span class="text-white text-lg text-center w-1/8">{{ $task->initiative_points }}</span>
+                                    <span class="text-white text-lg text-center w-1/8">{{ $task->points }}
+                                        @if ($task->points == 1)
+                                            point
+                                        @else 
+                                            points
+                                        @endif</span>
+                                    <span class="text-white text-lg text-center w-1/8">{{ $task->initiative_points }}
+                                    @if ($task->initiative_points == 0)
+                                            pas d'application
+                                        @else
+                                            points
+                                        @endif
+                                    </span>
+                                    
                                     <div class="flex gap-4">
                                         <a href="" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
                                         <form action="" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
