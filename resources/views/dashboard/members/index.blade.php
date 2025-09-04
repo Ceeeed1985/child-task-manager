@@ -6,10 +6,26 @@
 
 <div class="pt-6 px-12">
     @if (session('success'))
-        <div class="bg-green-100 text-green-500 p-3">
-            <p class="font-bold">C'est fait !</p>
-            <p>{{session('success')}}</p>
+        <div id="success-message" class="bg-green-100 text-green-500 p-3 rounded-lg flex justify-between items-center mb-6">
+            <div>
+                <p class="font-bold">C'est fait !</p>
+                <p>{{ session('success') }}</p>
+            </div>
+            <button id="close-button" class="text-green-500 hover:text-green-700 font-bold text-xl cursor-pointer ml-4">&times;</button>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const closeButton = document.getElementById('close-button');
+                const successMessage = document.getElementById('success-message');
+
+                if (closeButton && successMessage) {
+                    closeButton.addEventListener('click', function () {
+                        successMessage.style.display = 'none';
+                    });
+                }
+            });
+        </script>
     @endif
 
     <div class="flex gap-4">
