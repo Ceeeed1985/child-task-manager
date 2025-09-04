@@ -7,10 +7,26 @@
 <div class="pt-6 px-12">
 
     @if (session('success'))
-        <div class="bg-green-100 text-green-500 p-3">
-            <p class="font-bold">C'est fait !</p>
-            <p>{{session('success')}}</p>
+        <div id="success-message" class="bg-green-100 text-green-500 p-3 rounded-lg flex justify-between items-center mb-6">
+            <div>
+                <p class="font-bold">C'est fait !</p>
+                <p>{{ session('success') }}</p>
+            </div>
+            <button id="close-button" class="text-green-500 hover:text-green-700 font-bold text-xl cursor-pointer ml-4">&times;</button>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const closeButton = document.getElementById('close-button');
+                const successMessage = document.getElementById('success-message');
+
+                if (closeButton && successMessage) {
+                    closeButton.addEventListener('click', function () {
+                        successMessage.style.display = 'none';
+                    });
+                }
+            });
+        </script>
     @endif
 
     
@@ -26,8 +42,29 @@
     </div>
 
         <div class="flex gap-8 mb-12">
-            <div class="w-full flex flex-col py-8 px-8 rounded-3xl border border-2 border-neutral-800">
-                
+            <div class="w-full flex flex-col py-4 px-8 rounded-3xl border border-2 border-neutral-800">
+                    
+                    @foreach ($categories as $category)
+                    
+                    <h4 class="text-white text-2xl mt-4">{{ $category->name }}</h4>
+                        @foreach ($tasks as $task)
+                            @if ($category->id == $task->category_id)
+                                <div class="flex justify-between my-1">
+                                    <span class="text-white text-lg w-1/2 pl-4">{{ $task->name }}</span>
+                                    <span class="text-white text-lg text-center w-1/8">{{ $task->points }}</span>
+                                    <span class="text-white text-lg text-center w-1/8">{{ $task->initiative_points }}</span>
+                                    <div class="flex gap-4">
+                                        <a href="" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
+                                        <form action="" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
+                                        @csrf
+                                        @method('delete')
+                                            <button type="submit">Supprimer</button>
+                                        </form>
+                                     </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
                 
                 {{-- <a href="#" class="text-white bg-red-700 font-semibold rounded hover:bg-red-900 px-4 items-end">Créer une nouvelle tâche</a>
                 <div class="w-full flex justify-between rounded-3xl">
