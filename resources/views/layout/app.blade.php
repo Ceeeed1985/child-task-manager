@@ -43,7 +43,7 @@
                     <span class="mx-4 font-medium">Tâches</span>
                 </a>
 
-                <a class="flex items-center mx-2 px-4 pt-2 mt-4 pb-2 text-neutral-300 hover:text-white border-b-2 border-neutral-900 hover:border-b-2 hover:border-sky-800 focus:text-white focus:border-b-2 focus:border-sky-800" href="#">
+                <a class="flex items-center mx-2 px-4 pt-2 mt-4 pb-2 text-neutral-300 hover:text-white border-b-2 border-neutral-900 hover:border-b-2 hover:border-sky-800 focus:text-white focus:border-b-2 focus:border-sky-800" href="{{ route('sanctions.index') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
                     </svg>

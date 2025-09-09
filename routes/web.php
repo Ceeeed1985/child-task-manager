@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\TaskController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SanctionController;
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', [IndexController::class, "home"])->name('home');
@@ -32,3 +33,5 @@ Route::post('/tasks/store', [TaskController::class, 'store'])->name('tasks.store
 Route::get('/tasks/edit/{id}', [TaskController::class, 'edit'])->name('tasks.edit')->middleware('auth');
 Route::put('/tasks/update/{id}', [TaskController::class, 'update'])->name('tasks.update')->middleware('auth');
 Route::delete('/tasks/{id}', [TaskController::class, 'delete'])->name('tasks.delete')->middleware('auth');
+
+Route::get('/sanctions', [SanctionController::class, 'index'])->name('sanctions.index')->middleware('auth');
