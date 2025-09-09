@@ -31,4 +31,27 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index')->with('success', "La nouvelle tâche a été créée avec succès");
     }
+
+    public function edit($id){
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
+        $categories = Category::all();
+        return view('dashboard.tasks.edit', compact('task', 'categories'));
+    }
+
+    public function update(TaskRequest $request, $id){
+        $validatedData = $request->validated();
+        $task = Task::where('user_id', Auth::id())->findOrFail($id);
+
+        $task->update($validatedData);
+
+        return redirect()->route('tasks.index')->with('success', "La tâche a été modifiée avec succès");
+        
+    }
+
+    public function delete($id){
+        $task = Task::where('user_id', Auth::id())->get()->findOrFail($id);
+        $task->delete();
+
+        return redirect()->route('tasks.index')->with('success', "La tâche a été supprimée avec succès !");
+    }
 }
