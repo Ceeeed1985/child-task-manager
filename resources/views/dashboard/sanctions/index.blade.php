@@ -59,8 +59,8 @@
                                         @endif</span>
                                     
                                     <div class="flex gap-4">
-                                        <a href="" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
-                                        <form action="" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
+                                        <a href="{{ route('sanctions.edit', $sanction->id) }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
+                                        <form action="{{ route('sanctions.delete', $sanction->id) }}" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
                                         @csrf
                                         @method('delete')
                                             <button type="submit">Supprimer</button>
