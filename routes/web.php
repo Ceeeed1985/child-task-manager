@@ -35,3 +35,5 @@ Route::put('/tasks/update/{id}', [TaskController::class, 'update'])->name('tasks
 Route::delete('/tasks/{id}', [TaskController::class, 'delete'])->name('tasks.delete')->middleware('auth');
 
 Route::get('/sanctions', [SanctionController::class, 'index'])->name('sanctions.index')->middleware('auth');
+Route::get('/sanctions/create', [SanctionController::class, 'create'])->name('sanctions.create')->middleware('auth');
+Route::post('/sanctions/store', [SanctionController::class, 'store'])->name('sanctions.store')->middleware('auth');

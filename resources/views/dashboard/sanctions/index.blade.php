@@ -30,7 +30,7 @@
     @endif
 
     <div class="flex justify-end">
-        <a href="{{ route('tasks.create') }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 py-1 mb-6 rounded-lg hover:bg-sky-800">Créer une nouvelle sanction</a>
+        <a href="{{ route('sanctions.create') }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 py-1 mb-6 rounded-lg hover:bg-sky-800">Créer une nouvelle sanction</a>
     </div>
     
     <div class="flex gap-4">
@@ -44,30 +44,23 @@
         <div class="flex gap-8 mb-12">
             <div class="w-full flex flex-col py-4 px-8 rounded-3xl border border-2 border-neutral-800">
                     
-                    {{-- @foreach ($categories as $category)
+                    @foreach ($categories as $category)
                     
                     <h4 class="text-white text-2xl mt-4">{{ $category->name }}</h4>
-                        @foreach ($tasks as $task)
-                            @if ($category->id == $task->category_id)
+                        @foreach ($sanctions as $sanction)
+                            @if ($category->id == $sanction->category_id)
                                 <div class="flex justify-between my-1">
-                                    <span class="text-white text-lg w-1/2 pl-4">{{ $task->name }}</span>
-                                    <span class="text-white text-lg text-center w-1/8">{{ $task->points }}
-                                        @if ($task->points == 1)
+                                    <span class="text-white text-lg w-1/2 pl-4">{{ $sanction->name }}</span>
+                                    <span class="text-white text-lg text-center w-1/8">{{ $sanction->points }}
+                                        @if ($sanction->points == -1)
                                             point
                                         @else 
                                             points
                                         @endif</span>
-                                    <span class="text-white text-lg text-center w-1/8">{{ $task->initiative_points }}
-                                    @if ($task->initiative_points == 0)
-                                            pas d'application
-                                        @else
-                                            points
-                                        @endif
-                                    </span>
                                     
                                     <div class="flex gap-4">
-                                        <a href="{{ route('tasks.edit', $task->id) }}" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
-                                        <form action="{{ route('tasks.delete', $task->id) }}" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
+                                        <a href="" class="text-white bg-sky-600 content-center justify-self-end font-semibold px-4 rounded hover:bg-sky-800">Modifier</a>
+                                        <form action="" method="post" class="text-white bg-red-700 font-semibold rounded content-center hover:bg-red-900 px-4">
                                         @csrf
                                         @method('delete')
                                             <button type="submit">Supprimer</button>
@@ -76,7 +69,7 @@
                                 </div>
                             @endif
                         @endforeach
-                    @endforeach --}}
+                    @endforeach
                 
             </div>
         </div>
